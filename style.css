@@ -1,5 +1,5 @@
 jumbotron {
-  background-color: #f8f3f3; 
+  background-color: #f8f3f3;
 }
 
 #about {
@@ -11,7 +11,7 @@ jumbotron {
 }
 
 #home {
-  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); 
+  background-color:#f8f3f3; 
 }
 
 #projects {
@@ -27,7 +27,7 @@ jumbotron {
 }
 
 section {
-  padding-top: 12rem;
+  padding-top: 10rem;
 }
 
 .card-title {
@@ -53,4 +53,37 @@ section {
   font-style: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: 1px;
+}
+
+.btn.btn-primary {
+  background-color: #b60909;
+  border-color: #b60909;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+  background-color: #521c1c;
+  border-color: #a10808;
+}
+
+
+#stack img {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #stack img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.rounded-circle {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rounded-circle:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

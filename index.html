@@ -5,6 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio de Steven Muñoz" />
+    <meta name="keywords" content="Portfolio, Steven Muñoz, Zer0sh, Backend, Dev, Geek" />
+    <meta name="author" content="Steven Muñoz" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -72,7 +75,7 @@
     <section class="jumbotron text-center">
       <img src="img/me.jpg" alt="Picture of me" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Steven Muñoz</h1>
-      <p class="lead">Zer0sh</p>
+      <p class="lead">Z̸̡͇͍͎͚̳͙̩̗̰̔̓͛̒̏̈e̴̢̧̛͖͇̩̫͌̋̃̂́̑͘ͅr̵̫̲͛0̶͈͍̪͙̙̅͑̃̄͜͝ŝ̸̱̟͂ḫ̵̛͍̆͗̈́̅̾́͗</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           class="fill-custom1"
@@ -130,7 +133,7 @@
           </div>
         </div>
         </div>
-        <div class="col-md-3 mb-3" data-aos="flip-right" data-aos-delay="500">
+        <div class="col-md-3 mb-3" data-aos="flip-right" data-aos-delay="300">
         <div class="card">
           <img src="img/projects/finalsimulacion.png" class="card-img-top" alt="Project 2" />
           <h5 class="card-title" data-translate="project2Title">Simulación computacional de un banco con Python</h5>
@@ -139,7 +142,7 @@
           </div>
         </div>
         </div>
-        <div class="col-md-3 mb-3" data-aos="flip-right" data-aos-delay="1000">
+        <div class="col-md-3 mb-3" data-aos="flip-right" data-aos-delay="800">
         <div class="card">
           <img src="img/projects/www.png" class="card-img-top" alt="Project 3" />
           <h5 class="card-title" data-translate="project3Title">Página básica WWW </h5>
@@ -148,7 +151,7 @@
           </div>
         </div>
         </div>
-        <div class="col-md-3 mb-3" data-aos="flip-right" data-aos-delay="500">
+        <div class="col-md-3 mb-3" data-aos="flip-right" data-aos-delay="300">
         <div class="card">
           <img src="img/projects/powershellssh.png" class="card-img-top" alt="Project 4" />
           <h5 class="card-title" data-translate="project4Title">Script para configuración de claves SSH</h5>
@@ -157,7 +160,7 @@
           </div>
         </div>
         </div>
-        <div class="col-md-3 mb-3" data-aos="flip-right" data-aos-delay="1000">
+        <div class="col-md-3 mb-3" data-aos="fade-right" data-aos-delay="800">
         <div class="card">
           <img src="img/projects/future.jpeg" class="card-img-top" alt="Project 5" />
           <h5 class="card-title" data-translate="project5Title">Trabajo en proceso..</h5>
@@ -317,8 +320,7 @@
       const newDelay = shuffleArray(delayTimes);
       galleryImages.forEach((img, i) => {
         img.dataset.aos = 'fade-up';
-        img.dataset.aosDelay = i * 50 + '';
-        // img.dataset.aosDelay = newDelay[i];
+        img.dataset.aosDelay = i * 30 + '';
       });
 
       AOS.init({
@@ -334,6 +336,7 @@
           es: {
         home: 'Home',
         about: 'Acerca de mí',
+        DownloadCV: 'Descargar CV',
         projects: 'Proyectos',
         contact: 'Contacto',
         technologies: 'Tecnologías',
@@ -360,6 +363,7 @@
           en: {
         home: 'Home',
         about: 'About Me',
+        DownloadCV: 'Download CV',
         projects: 'Projects',
         contact: 'Contact',
         technologies: 'Technologies',
