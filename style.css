@@ -1,28 +1,29 @@
 .jumbotron {
   padding-top: 10rem;
-  background-color: #f8f3f3; /* Un rojo oscuro elegante */
-  border: none; /* Elimina cualquier borde */
+  background-color: #f8f3f3;
 }
 
-
 #about {
-  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); /* Consistencia con 'about' */
+  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
 }
 
 .fill-custom1 {
-  fill: #ffdada; /* Un color salmón que complementa los tonos rojizos */
+  fill: #ffdada;
 }
 
 #home {
-  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); /* Consistencia con 'about' */
+  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
 }
 
 #projects {
-  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); /* Consistencia con 'about' */
-}
+  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
 
 #contact {
-  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); /* Consistencia con 'about' */
+  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
+}
+
+#stack {
+  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
 }
 
 section {
@@ -33,33 +34,23 @@ section {
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
+  font-size: 24px;
 }
 
 .card-text {
-  font-size: 12px; /* Asegúrate de añadir 'px' para el tamaño de fuente */
+  font-size: 16px; 
   text-align: center;
 }
 
-/* style.css */
-
 .accent-custom {
-  background-color: #b60909; /* Un tono rojizo acentuado */
+  background-color: #b60909;
 }
-
 
 .fill-custom2 {
-  fill: #ffdada;
-}
-
-.fill-custom3 {
-  fill: #ffdada; /* Un rojo tomate brillante */
-}
-
-.fill-custom4 {
-  fill: #b60909; /* Un rojo indian, más suave */
+  fill: #b60909;
 }
 
 .display-4 {
-  color: #000000; /* Un gris claro que contrasta bien con los rojos */
+  color: #2e2e3e;
   font-style: italic;
 }
