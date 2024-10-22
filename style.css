@@ -1,25 +1,25 @@
-.jumbotron {
-  padding-top: 10rem;
-  background-color: #f8f3f3;
+jumbotron {
+  background-color: #f8f3f3; 
 }
 
 #about {
-  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
+  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); 
 }
 
 .fill-custom1 {
-  fill: #ffdada;
+  fill: #ffdada; 
 }
 
 #home {
-  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
+  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); 
 }
 
 #projects {
-  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
+  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); 
+}
 
 #contact {
-  background-image: linear-gradient(to top, #f8f3f3 70%, #ffdada 100%);
+  background-image: linear-gradient(to top, #ffffff 70%, #ffdada 100%); 
 }
 
 #stack {
@@ -27,23 +27,21 @@
 }
 
 section {
-  padding-top: 5rem;
+  padding-top: 12rem;
 }
 
 .card-title {
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
-  font-size: 24px;
 }
 
 .card-text {
-  font-size: 16px; 
   text-align: center;
 }
 
 .accent-custom {
-  background-color: #b60909;
+  background-color: #b60909; 
 }
 
 .fill-custom2 {
@@ -51,6 +49,8 @@ section {
 }
 
 .display-4 {
-  color: #2e2e3e;
-  font-style: italic;
+  color: #403f3f;
+  font-style: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
 }

@@ -30,6 +30,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Tittle page -->
     <title> ツ Steven Muñoz | Portfolio </title>
   </head>
   <body id="home">
@@ -69,7 +70,7 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-      <img src="img/me.jpg" alt="Picture of Steven" width="200" class="rounded-circle img-thumbnail" />
+      <img src="img/me.jpg" alt="Picture of me" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Steven Muñoz</h1>
       <p class="lead">Zer0sh</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -116,6 +117,7 @@
         <div class="col">
         <h2 data-translate="projectsTitle">Mis proyectos</h2>
         <h5 data-translate="projectsSubtitle">En proceso de organización 🏗️</h5>
+        <br>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -246,7 +248,7 @@
         <br>
         <a href="mailto:steven.jm357@gmail.com?subject=Consulta&body=Te%20escribo%20desde%20tu%20portfolio..." class="btn btn-primary" data-translate="sendEmail">Enviar Email</a>
         <br> <br>
-        <h4>¡No dudes en escribirme, estaré encantado de conocerte!</h4>
+        <h4 data-translate="contactMessage">¡No dudes en escribirme, estaré encantado de conocerte! :D</h4>
         </div>
       </div>
       </div>
@@ -268,10 +270,10 @@
         <a href="https://github.com/zer0-sh" class="text-white mx-2" target="_blank">
           <i class="bi bi-github" style="font-size: 2rem;"></i>
         </a>
-        <a href="https://co.linkedin.com/in/johans-munozl" class="text-white mx-2" target="_blank">
+        <a href="https://www.linkedin.com/in/steven-munozl/" class="text-white mx-2" target="_blank">
           <i class="bi bi-linkedin" style="font-size: 2rem;"></i>
         </a>
-        <a href="mailto:steven.munoz@gmail.com" class="text-white mx-2">
+        <a href="mailto:steven.jm357@gmail.com" class="text-white mx-2">
           <i class="bi bi-envelope" style="font-size: 2rem;"></i>
         </a>
         <a href="https://t.me/Moonwalker735" class="text-white mx-2" target="_blank">
@@ -298,7 +300,7 @@
       gsap.from('.display-4', { delay: 1, duration: 1, opacity: 0, x: '-10%' });
 
       gsap.registerPlugin(TextPlugin);
-      gsap.to('.lead', { delay: 1.5, duration: 2, text: 'Backend Dev | Geek' });
+      gsap.to('.lead', { delay: .5, duration: 1, text: 'Backend Dev | Geek' });
 
       const galleryImages = document.querySelectorAll('.gallery-img');
       const delayTimes = [0, 50, 100, 150, 200, 250, 300, 350, 400, 450];
@@ -323,16 +325,6 @@
         once: true,
         duration: 3000,
       });
-    </script>
-
-    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
-    <script type="text/javascript">
-      VanillaTilt.init(document.querySelectorAll('.keyboard-box'), {
-        max: 35,
-        speed: 1000,
-        glare: true,
-      });
-
 
       function toggleLanguage() {
         const currentLanguage = document.documentElement.lang;
@@ -363,6 +355,7 @@
         project4Text: 'Script que permite la inscripción de claves SSH con tu cuenta de Github para descargar dependencias de node.js que requieren autorización por SSH.',
         project5Title: 'Trabajo en proceso..',
         project5Text: 'Trabajando en nuevos proyectos para aumentar mis habilidades...',
+        contactMessage: '¡No dudes en escribirme, estaré encantado de conocerte! :D',
           },
           en: {
         home: 'Home',
@@ -388,6 +381,7 @@
         project4Text: 'Script that allows the registration of SSH keys with your Github account to download node.js dependencies that require SSH authorization.',
         project5Title: 'Work in Progress..',
         project5Text: 'Working on new projects to enhance my skills...',
+        contactMessage: 'Do not hesitate to write to me, I\'ll be happy to meet you! :D',
           }
         };
 
@@ -402,6 +396,8 @@
           document.documentElement.lang = 'es';
         }
       }
+
+    </script>
 
     </script>
   </body>
