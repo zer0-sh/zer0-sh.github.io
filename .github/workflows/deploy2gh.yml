@@ -16,22 +16,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-    
-      - name: Install Yarn
+      - name: Load NVM, set Node.js and install Yarn
         run: |
-          npm install -g yarn  # Instala Yarn globalmente
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-      - name: Install dependencies
-        run: |
+          nvm install 16
+          nvm use 16
+
+          npm install -g yarn
+          
           yarn install
-
-      - name: Build the site
-        run: |
           yarn build
+        shell: bash
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
