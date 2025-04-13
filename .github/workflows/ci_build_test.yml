@@ -1,4 +1,4 @@
-name: CI Build
+name: CI Dependencies and Build
 
 on:
   push:
@@ -13,9 +13,9 @@ concurrency:
   cancel-in-progress: false   
 
 jobs:
-  build:
+  install_dependencies:
     runs-on: [self-hosted, linux]
-
+    
     strategy:
       matrix:
         node-version: [16]
@@ -34,6 +34,23 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+
+  build:
+    runs-on: [self-hosted, linux]
+    needs: install_dependencies
+    
+    strategy:
+      matrix:
+        node-version: [16]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Build site
         run: yarn build
