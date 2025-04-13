@@ -9,7 +9,7 @@ const about = {
   name: 'Johann M',
   role: 'Backend Dev - SysAdmin - Geek',
   description:
-    "Hey everyone! I'm a systems engineering student on a quest to become the ultimate code ninja, a gaming fanatic, and a Linux lover rolled into one! I live for tech and never back down from a challenge. I'm embarking on a covert mission to tap into my inner Diogenes and fully adopt the philosophy of cynicism in today's digital era, all while championing the cause of open-source software. Because in a world of proprietary solutions, I believe in the power of freedom, transparency, and community-driven innovation that comes with embracing the ethos of free software.",
+    "Hey everyone! I'm a software developer on a quest to become the ultimate code ninja, a gaming fanatic, and a Linux lover rolled into one! I live for tech and never back down from a challenge. I'm embarking on a covert mission to tap into my inner Diogenes and fully adopt the philosophy of cynicism in today's digital era, all while championing the cause of open-source software. Because in a world of proprietary solutions, I believe in the power of freedom, transparency, and community-driven innovation that comes with embracing the ethos of free software. I'm discovering my passion for DevOps and sysadmin, exploring the tools and technologies that allow me to automate, streamline, and enhance workflows in software development and IT operations.",
   resume: 'https://www.linkedin.com/in/steven-munozl/',
   social: {
     linkedin: 'https://www.linkedin.com/in/steven-munozl/',
