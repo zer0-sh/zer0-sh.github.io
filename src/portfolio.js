@@ -21,10 +21,17 @@ const projects = [
   // projects can be added an removed
   // if there are no projects, Projects section won't show up
   {
+    name: '',
+    description:
+      'GitHub Self-Hosted Runner con Docker!',
+      stack: ['Docker', 'Bash', 'GitHub Actions'],
+    sourceCode: 'https://https://github.com/zer0-sh/gh-runner-selfhosted-docker?tab=readme-ov-file#-github-self-hosted-runner-en-docker.com',
+  },
+  {
     name: 'Cooming soon!',
     description:
       'In this section, I will showcase my projects. Stay tuned for updates!',
-      stack: ['HTML', 'CSS', 'Web Design'],
+      stack: ['New!!!', 'Working'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
