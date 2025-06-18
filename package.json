@@ -2,7 +2,7 @@
   "name": "personal-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zer0-sh.github.io/zer0-sh.github.io",
+  "homepage": "https://zer0-sh.github.io",
   "engines": {
     "node": ">=22.0.0",
     "npm": ">=10.0.0"
