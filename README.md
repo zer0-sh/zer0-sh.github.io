@@ -7,6 +7,7 @@ Welcome to my personal portfolio website! This repository contains the source co
 - Showcase of my projects
 - About me section
 - Contact information
+- Blog ???
 
 ## Getting Started
 

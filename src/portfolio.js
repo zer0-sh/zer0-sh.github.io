@@ -2,7 +2,7 @@ const header = {
   // all the properties are optional - can be left empty or deleted
   homepage: 'https://zer0-sh.github.io/',
   title: 'Zer0sh',
-}
+};
 
 const about = {
   // all the properties are optional - can be left empty or deleted
@@ -15,27 +15,27 @@ const about = {
     linkedin: 'https://www.linkedin.com/in/steven-munozl/',
     github: 'https://github.com/zer0-sh/',
   },
-}
+};
 
 const projects = [
   // projects can be added an removed
   // if there are no projects, Projects section won't show up
   {
     name: '',
-    description:
-      'GitHub Self-Hosted Runner con Docker!',
-      stack: ['Docker', 'Bash', 'GitHub Actions'],
-    sourceCode: 'https://https://github.com/zer0-sh/gh-runner-selfhosted-docker?tab=readme-ov-file#-github-self-hosted-runner-en-docker.com',
+    description: 'GitHub Self-Hosted Runner con Docker!',
+    stack: ['Docker', 'Bash', 'GitHub Actions'],
+    sourceCode:
+      'https://https://github.com/zer0-sh/gh-runner-selfhosted-docker?tab=readme-ov-file#-github-self-hosted-runner-en-docker.com',
   },
   {
     name: 'Cooming soon!',
     description:
       'In this section, I will showcase my projects. Stay tuned for updates!',
-      stack: ['New!!!', 'Working'],
+    stack: ['New!!!', 'Working'],
     sourceCode: 'https://github.com',
     livePreview: 'https://github.com',
   },
-]
+];
 
 const skills = [
   // skills can be added or removed
@@ -52,11 +52,11 @@ const skills = [
   'React',
   'Git',
   'CI/CD',
-]
+];
 
 const contact = {
   // email is optional - if left empty Contact section won't show up
   email: 'steven.jm357@gmail.com',
-}
+};
 
-export { header, about, projects, skills, contact }
+export { header, about, projects, skills, contact };
