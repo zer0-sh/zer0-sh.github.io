@@ -194,7 +194,7 @@ const post = {
   excerpt:
     'Explora cómo Material UI facilita el desarrollo de interfaces modernas y consistentes en aplicaciones React.',
   content: PostContent,
-  featured: true,
+  featured: false,
   image: '/img/blog/react-hooks.jpg',
   date: '2024-01-20',
   readTime: '7 min',
