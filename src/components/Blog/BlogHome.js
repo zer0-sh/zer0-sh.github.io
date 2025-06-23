@@ -123,7 +123,7 @@ function BlogHome() {
   return (
     <StyledContainer maxWidth="lg">
       <StyledTitle variant="h3" component="h1">
-        <b>Blog</b>
+        <b>Mi pequeño rincón</b>
       </StyledTitle>
 
       {/* Posts Destacados */}
