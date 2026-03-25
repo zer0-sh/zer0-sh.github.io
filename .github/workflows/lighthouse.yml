@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,6 +26,11 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Install Chromium
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+
       - name: Install serve
         run: npm install -g serve
 
@@ -37,11 +42,11 @@ jobs:
       - name: Run Lighthouse
         run: |
           npx lighthouse http://localhost:3000 \
+            --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" \
             --only-categories=performance \
-            --quiet \
             --output=json \
             --output-path=./lighthouse.json
 
-      - name: Show performance score
+      - name: Show score
         run: |
-          node -e "const r=require('./lighthouse.json'); console.log('Performance score:', r.categories.performance.score * 100)"
+          node -e "const r=require('./lighthouse.json'); console.log('Performance:', r.categories.performance.score * 100)"
