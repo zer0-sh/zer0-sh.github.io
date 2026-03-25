@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -21,11 +21,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run security audit (show output)
+      - name: Run security audit
+        id: audit
         run: |
           echo "🔍 Running npm audit..."
-          npm audit --audit-level=high || true
+          npm audit --json > audit.json || true
 
-      - name: Show audit summary
+      - name: Generate summary
         run: |
-          echo "📊 Security audit completed"
+          echo "## 🛡️ Security Audit Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f audit.json ]; then
+            VULNS=$(jq '.metadata.vulnerabilities.total' audit.json)
+            HIGH=$(jq '.metadata.vulnerabilities.high' audit.json)
+            MOD=$(jq '.metadata.vulnerabilities.moderate' audit.json)
+            LOW=$(jq '.metadata.vulnerabilities.low' audit.json)
+
+            echo "- Total vulnerabilities: $VULNS" >> $GITHUB_STEP_SUMMARY
+            echo "- High: $HIGH" >> $GITHUB_STEP_SUMMARY
+            echo "- Moderate: $MOD" >> $GITHUB_STEP_SUMMARY
+            echo "- Low: $LOW" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No audit results found" >> $GITHUB_STEP_SUMMARY
+          fi
