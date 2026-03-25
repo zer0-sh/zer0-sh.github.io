@@ -1,0 +1,30 @@
+name: "Security Scan"
+
+on:
+  schedule:
+    - cron: "0 0 * * 1" # cada lunes
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run security audit (show output)
+        run: |
+          echo "🔍 Running npm audit..."
+          npm audit --audit-level=high || true
+
+      - name: Show audit summary
+        run: |
+          echo "📊 Security audit completed"
