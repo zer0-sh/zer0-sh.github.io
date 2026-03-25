@@ -1,6 +1,4 @@
-name: "Lighthouse CI - Performance & SEO Audit"
-
-run-name: "Lighthouse audit - ${{ github.sha }}"
+name: "Performance Test (Lighthouse)"
 
 on:
   push:
@@ -10,12 +8,11 @@ on:
 
 jobs:
   lighthouse:
-    name: "Run Lighthouse audit"
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,25 +29,19 @@ jobs:
       - name: Install serve
         run: npm install -g serve
 
-      - name: Start local server
+      - name: Start server
         run: |
           serve -s build -l 3000 &
           sleep 5
 
-      - name: Run Lighthouse audit
-        id: lighthouse
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          urls: |
-            http://localhost:3000
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-
-      - name: Generate summary
+      - name: Run Lighthouse
         run: |
-          echo "## Lighthouse Report" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "URL: http://localhost:3000" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Results:" >> $GITHUB_STEP_SUMMARY
-          echo "${{ steps.lighthouse.outputs.results }}" >> $GITHUB_STEP_SUMMARY
+          npx lighthouse http://localhost:3000 \
+            --only-categories=performance \
+            --quiet \
+            --output=json \
+            --output-path=./lighthouse.json
+
+      - name: Show performance score
+        run: |
+          node -e "const r=require('./lighthouse.json'); console.log('Performance score:', r.categories.performance.score * 100)"
