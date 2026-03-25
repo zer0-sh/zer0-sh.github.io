@@ -50,3 +50,14 @@ jobs:
       - name: Show score
         run: |
           node -e "const r=require('./lighthouse.json'); console.log('Performance:', r.categories.performance.score * 100)"
+
+      - name: Generate summary
+        run: |
+          echo "## Lighthouse Performance Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+      
+          echo "URL: http://localhost:3000" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+      
+          SCORE=$(node -e "const r=require('./lighthouse.json'); console.log(r.categories.performance.score * 100)")
+          echo "Performance Score: $SCORE" >> $GITHUB_STEP_SUMMARY
