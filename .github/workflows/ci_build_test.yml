@@ -1,48 +1,27 @@
-name: CI Dependencies and Build
+name: CI Build Test
 
 on:
   push:
-    branches:
-      - main 
+    branches: [main]
   pull_request:
-    branches:
-      - main
-
-concurrency:
-  group: build-${{ github.ref }}
-  cancel-in-progress: false   
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [22]
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v5
 
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install Yarn
-        run: npm install -g yarn
-
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: 22
+          cache: npm
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
 
-      - name: Build site
-        run: yarn build
+      - name: Build project
+        run: npm run build
