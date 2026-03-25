@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 export const AnimatedNetwork = () => {
-  const canvasRef = useRef(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const nodesRef = useRef([]);
-  const linesRef = useRef([]);
-  const animationRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
