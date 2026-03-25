@@ -1,0 +1,35 @@
+name: "Lighthouse CI - Performance & SEO Audit for GitHub Pages Portfolio"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    name: "Run Lighthouse audit (Performance, Accessibility, SEO)"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "📥 Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "⚙️ Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: "📦 Install dependencies"
+        run: npm ci
+
+      - name: "🏗️ Build project"
+        run: npm run build
+
+      - name: "🚀 Run Lighthouse audit"
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://zer0-sh.github.io/git/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
