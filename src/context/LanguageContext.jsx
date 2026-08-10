@@ -32,6 +32,50 @@ const translations = {
       description: 'Specialist with formal role as Level 1 Technical Support, with practical experience in operating production environments and a strong focus on DevOps practices, automation, and systems administration. I work in managing Linux-based infrastructure, deploying and maintaining web applications, and resolving production incidents.',
       experience: 'I have an integral vision that connects development, infrastructure, and support, allowing me to diagnose complex problems and propose efficient, scalable, and secure solutions across the entire stack.',
     },
+    work: {
+      title: 'What I Do',
+      subtitle: 'My day-to-day responsibilities as a DevOps & Systems Engineer',
+      function1: {
+        name: 'Kubernetes Orchestration',
+        description: 'Orchestrating instances on Kubernetes with ArgoCD, reviewing failures, applying optimizations and monitoring logs.',
+        tags: ['Kubernetes', 'ArgoCD', 'DevOps'],
+      },
+      function2: {
+        name: 'CI/CD & Deployments',
+        description: 'Deploying to production and staging environments with GitHub Actions, on dedicated servers, Pantheon and multiple technologies like Django, WordPress, Drupal and React.',
+        tags: ['CI/CD', 'GitHub Actions', 'Deployments'],
+      },
+      function3: {
+        name: 'Monitoring & Observability',
+        description: 'Setting up monitoring services such as Sentry and Grafana, and reviewing application logs.',
+        tags: ['Monitoring', 'Grafana', 'Sentry', 'Logs'],
+      },
+      function4: {
+        name: 'Application Support',
+        description: 'Handling and resolving production application tickets. Supporting PHP, WordPress, Drupal, Django and Node.js apps, investigating errors in apps, APIs and integrations, analyzing logs and system behavior, and escalating to dev/N2 when code intervention is required.',
+        tags: ['Support', 'PHP', 'WordPress', 'Drupal', 'Django', 'Node.js'],
+      },
+      function5: {
+        name: 'Incident Investigation',
+        description: 'Investigating incidents and finding root causes, not just fixing the symptom. Troubleshooting NGINX, SSL certificates, DNS/Cloudflare, databases, migrations, Linux servers, containers and deployments.',
+        tags: ['Incidents', 'Root Cause', 'NGINX', 'SSL', 'DNS'],
+      },
+      function6: {
+        name: 'Infrastructure & Servers',
+        description: 'Administering Linux servers, VPS and dedicated servers with Linode, bastion hosts and Docker/Docker Compose across more than 20 containers. Configuring NGINX, SSH, Fail2Ban and access controls, and hardening server security.',
+        tags: ['Linux', 'Docker', 'Linode', 'Security', 'Hardening'],
+      },
+      function7: {
+        name: 'Database Administration',
+        description: 'Working with PostgreSQL and MySQL: creating and installing databases on servers and Docker, diagnosing issues, and participating in migrations and production troubleshooting.',
+        tags: ['Databases', 'PostgreSQL', 'MySQL', 'Migrations'],
+      },
+      function8: {
+        name: 'Automation & Scripting',
+        description: 'Writing Bash scripts and Python/JavaScript when appropriate, automating repetitive infrastructure and support tasks such as deployments, backups and environment creation.',
+        tags: ['Automation', 'Bash', 'Python', 'Scripting'],
+      },
+    },
     skills: {
       title: 'Tech Stack',
       infrastructure: {
@@ -109,6 +153,50 @@ const translations = {
       title: 'Sobre mí',
       description: 'Especialista de TI con rol formal de Soporte Técnico Nivel 1, con experiencia práctica en la operación de entornos productivos y un fuerte enfoque en prácticas DevOps, automatización y administración de sistemas. Trabajo en la gestión de infraestructura basada en Linux, despliegue y mantenimiento de aplicaciones web, así como en la resolución de incidentes en producción.',
       experience: 'Tengo una visión integral que conecta desarrollo, infraestructura y soporte, lo que me permite diagnosticar problemas complejos y proponer soluciones eficientes, escalables y seguras. Mi experiencia abarca desde soporte técnico hasta automatización de procesos, orquestación de contenedores y mantenimiento de plataformas en entornos reales.',
+    },
+    work: {
+      title: 'Lo que hago',
+      subtitle: 'Mis funciones diarias como Especialista DevOps & Sistemas',
+      function1: {
+        name: 'Orquestación Kubernetes',
+        description: 'Orquesto instancias en Kubernetes con ArgoCD, reviso fallos, aplico optimizaciones y superviso logs.',
+        tags: ['Kubernetes', 'ArgoCD', 'DevOps'],
+      },
+      function2: {
+        name: 'CI/CD y Despliegues',
+        description: 'Despliego a producción y entornos de prueba con GitHub Actions, en servidores dedicados, Pantheon y múltiples tecnologías como Django, WordPress, Drupal y React.',
+        tags: ['CI/CD', 'GitHub Actions', 'Despliegues'],
+      },
+      function3: {
+        name: 'Monitorización y Observabilidad',
+        description: 'Configuro servicios de monitorización como Sentry y Grafana, y reviso logs de aplicaciones.',
+        tags: ['Monitorización', 'Grafana', 'Sentry', 'Logs'],
+      },
+      function4: {
+        name: 'Soporte de Aplicaciones',
+        description: 'Atiendo y resuelvo tickets de aplicaciones en producción. Doy soporte a aplicaciones PHP, WordPress, Drupal, Django y Node.js, investigo errores de apps, APIs e integraciones, analizo logs y comportamiento del sistema, y escalo a desarrollo/N2 cuando requiere intervención de código.',
+        tags: ['Soporte', 'PHP', 'WordPress', 'Drupal', 'Django', 'Node.js'],
+      },
+      function5: {
+        name: 'Investigación de Incidentes',
+        description: 'Investigo incidentes y busco la causa raíz, no solo el síntoma. Atiendo problemas de NGINX, certificados SSL, DNS/Cloudflare, bases de datos, migraciones, servidores Linux, contenedores y despliegues.',
+        tags: ['Incidentes', 'Causa raíz', 'NGINX', 'SSL', 'DNS'],
+      },
+      function6: {
+        name: 'Infraestructura y Servidores',
+        description: 'Administro servidores Linux, VPS y dedicados con Linode, bastion hosts y Docker/Docker Compose con más de 20 contenedores. Configuro NGINX, SSH, Fail2Ban y controles de acceso, y participo en el hardening y la seguridad de servidores.',
+        tags: ['Linux', 'Docker', 'Linode', 'Seguridad', 'Hardening'],
+      },
+      function7: {
+        name: 'Administración de Bases de Datos',
+        description: 'Trabajo con PostgreSQL y MySQL: creación e instalación en servidores y Docker, diagnóstico de problemas y participación en migraciones y resolución de fallos en producción.',
+        tags: ['Bases de datos', 'PostgreSQL', 'MySQL', 'Migraciones'],
+      },
+      function8: {
+        name: 'Automatización y Scripting',
+        description: 'Creo scripts principalmente con Bash, además de Python/JavaScript cuando corresponde, automatizando tareas repetitivas de infraestructura y soporte como despliegues, backups y creación de entornos.',
+        tags: ['Automatización', 'Bash', 'Python', 'Scripting'],
+      },
     },
     skills: {
       title: 'Stack Tecnológico',

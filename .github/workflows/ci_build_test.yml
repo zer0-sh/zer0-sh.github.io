@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -25,3 +27,6 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          REACT_APP_BUILD_TAG: ${{ github.ref_type == 'tag' && github.ref_name || 'dev' }}
+          REACT_APP_BUILD_COMMIT: ${{ github.sha }}

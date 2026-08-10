@@ -1,0 +1,21 @@
+name: Tag Build
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create build tag from last commit
+        run: |
+          SHORT=$(git rev-parse --short HEAD)
+          git tag "build-$SHORT" HEAD
+          git push origin "build-$SHORT"
