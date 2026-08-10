@@ -10,6 +10,13 @@ export const Footer = () => {
   const buildCommit = process.env.REACT_APP_BUILD_COMMIT || 'local';
   const commitUrl = `https://github.com/zer0-sh/zer0-sh.github.io/commit/${buildCommit}`;
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const quickLinks = ['about', 'skills', 'projects', 'contact'];
+
   return (
     <footer className="bg-gray-900 dark:bg-black text-white py-8 border-t border-gray-800">
       <div className="max-w-6xl mx-auto px-4">
@@ -21,10 +28,16 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#about" className="hover:text-[var(--color-primary)] transition-colors">About</a></li>
-              <li><a href="#skills" className="hover:text-[var(--color-primary)] transition-colors">Skills</a></li>
-              <li><a href="#projects" className="hover:text-[var(--color-primary)] transition-colors">Projects</a></li>
-              <li><a href="#contact" className="hover:text-[var(--color-primary)] transition-colors">Contact</a></li>
+              {quickLinks.map((id) => (
+                <li key={id}>
+                  <button
+                    onClick={() => scrollToSection(id)}
+                    className="capitalize hover:text-[var(--color-primary)] transition-colors"
+                  >
+                    {id}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
           <div>

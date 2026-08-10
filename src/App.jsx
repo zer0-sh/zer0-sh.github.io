@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
@@ -50,7 +50,7 @@ const LanguageContent = ({ currentLang }) => {
 export default function App() {
   return (
     <ThemeProvider>
-      <Router basename="/">
+      <Router>
         <Routes>
           <Route path="/" element={<Navigate to="/en" replace />} />
           <Route path="/blog" element={<BlogPage />} />

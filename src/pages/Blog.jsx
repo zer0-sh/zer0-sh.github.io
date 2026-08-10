@@ -157,15 +157,15 @@ export const Blog = () => {
                     </h3>
                     <nav className="space-y-2">
                       {headings.map((h) => (
-                        <a
+                        <button
                           key={h.id}
-                          href={`#${h.id}`}
-                          className={`block text-sm transition-colors hover:text-[#00e5ff] ${
+                          onClick={() => document.getElementById(h.id)?.scrollIntoView({ behavior: 'smooth' })}
+                          className={`block text-left text-sm transition-colors hover:text-[#00e5ff] ${
                             h.level === 3 ? 'ml-4 text-[#9080b0]' : 'font-medium text-[#e0d0ff]'
                           }`}
                         >
                           {h.text}
-                        </a>
+                        </button>
                       ))}
                     </nav>
                   </div>
