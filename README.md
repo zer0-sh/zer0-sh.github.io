@@ -77,7 +77,7 @@ Este proyecto usa `HashRouter` para evitar problemas de rutas.
 
 Ejemplo:
 
-https://zer0-sh.github.io/git/#/es
+https://zer0-sh.github.io/#/es
 
 ------------------------------------------------------------------------
 
