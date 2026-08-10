@@ -19,6 +19,8 @@ const translations = {
       skills: 'Skills',
       projects: 'Projects',
       contact: 'Contact',
+      blog: 'Blog',
+      others: 'Others',
     },
     hero: {
       title: 'DevOps & Systems Engineer',
@@ -85,6 +87,9 @@ const translations = {
       madewith: 'Made with React & Tailwind CSS',
       yearsExp: `${getYearsOfExperience()} years experience`,
     },
+    blog: {
+      subtitle: 'Writing about DevOps, Cybersecurity and Development',
+    },
   },
   es: {
     nav: {
@@ -92,6 +97,8 @@ const translations = {
       skills: 'Skills',
       projects: 'Proyectos',
       contact: 'Contacto',
+      blog: 'Blog',
+      others: 'Otros',
     },
     hero: {
       title: 'Especialista DevOps & Sistemas',
@@ -157,6 +164,9 @@ const translations = {
       copyright: `© ${getCurrentYear()} Steven Muñoz | ↄ Licensed under GPL v3`,
       madewith: 'Hecho con React & Tailwind CSS',
       yearsExp: `${getYearsOfExperience()} años de experiencia`,
+    },
+    blog: {
+      subtitle: 'Escribiendo sobre DevOps, Ciberseguridad y Desarrollo',
     },
   },
 };

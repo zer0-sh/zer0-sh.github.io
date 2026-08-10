@@ -1,28 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
+import { Blog } from './pages/Blog';
 import './index.css';
 
-const AppContent = () => {
+const BlogPage = () => {
   return (
-    <Router basename="/">
-      <Routes>
-        <Route path="/" element={<Navigate to="/en" replace />} />
-        <Route
-          path="/:lang"
-          element={<LanguageWrapper />}
-        />
-      </Routes>
-    </Router>
+    <LanguageProvider>
+      <Blog />
+    </LanguageProvider>
   );
 };
 
 const LanguageWrapper = () => {
-  const lang = window.location.pathname.split('/')[1] || 'en';
+  const location = useLocation();
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const lang = pathParts[0];
 
   const validLangs = ['en', 'es'];
   const currentLang = validLangs.includes(lang) ? lang : 'en';
@@ -53,7 +50,13 @@ const LanguageContent = ({ currentLang }) => {
 export default function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <Router basename="/">
+        <Routes>
+          <Route path="/" element={<Navigate to="/en" replace />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/:lang" element={<LanguageWrapper />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }

@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { ThemeToggle } from './ThemeToggle';
-import { FiUser, FiCode, FiFolder, FiMail, FiMenu, FiX } from 'react-icons/fi';
+import { FiUser, FiCode, FiFolder, FiMail, FiMenu, FiX, FiChevronDown, FiExternalLink, FiBook } from 'react-icons/fi';
 
 export const Navbar = ({ currentLang }) => {
   const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const navIconMap = {
     about: <FiUser className="w-4 h-4" />,
     skills: <FiCode className="w-4 h-4" />,
     projects: <FiFolder className="w-4 h-4" />,
+    blog: <FiBook className="w-4 h-4" />,
     contact: <FiMail className="w-4 h-4" />,
   };
 
@@ -20,7 +22,14 @@ export const Navbar = ({ currentLang }) => {
     { key: 'about', label: t('nav.about'), id: 'about' },
     { key: 'skills', label: t('nav.skills'), id: 'skills' },
     { key: 'projects', label: t('nav.projects'), id: 'projects' },
+    { key: 'blog', label: t('nav.blog'), path: '/blog', external: true },
     { key: 'contact', label: t('nav.contact'), id: 'contact' },
+  ];
+
+  const othersLinks = [
+    { label: 'DevOps', path: '/blog' },
+    { label: 'Ciberseguridad', path: '/blog' },
+    { label: 'Desarrollo', path: '/blog' },
   ];
 
   const scrollToSection = (id) => {
@@ -42,15 +51,50 @@ export const Navbar = ({ currentLang }) => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
+              item.path ? (
+                <Link
+                  key={item.key}
+                  to={item.external ? item.path : `/${currentLang}${item.path}`}
+                  className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[var(--color-primary)] transition-colors"
+                >
+                  {navIconMap[item.key]}
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.key}
+                  onClick={() => scrollToSection(item.id)}
+                  className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[var(--color-primary)] transition-colors"
+                >
+                  {navIconMap[item.key]}
+                  {item.label}
+                </button>
+              )
+            ))}
+            <div className="relative">
               <button
-                key={item.key}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[var(--color-primary)] transition-colors"
               >
-                {navIconMap[item.key]}
-                {item.label}
+                {t('nav.others')}
+                <FiChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-            ))}
+              {isDropdownOpen && (
+                <div className="absolute top-full mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-2 z-50">
+                  {othersLinks.map((link, index) => (
+                    <Link
+                      key={index}
+                      to={link.path}
+                      className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-[var(--color-primary)] transition-colors"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      <FiExternalLink className="w-3 h-3" />
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Right side - Theme toggle and language */}
@@ -77,15 +121,41 @@ export const Navbar = ({ currentLang }) => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-3 animate-in fade-in slide-in-from-top-2 duration-200">
             {navItems.map((item) => (
-              <button
-                key={item.key}
-                onClick={() => scrollToSection(item.id)}
-                className="w-full flex items-center gap-3 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-[var(--color-primary)] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
-              >
-                {navIconMap[item.key]}
-                <span className="text-sm font-medium">{item.label}</span>
-              </button>
+              item.path ? (
+                <Link
+                  key={item.key}
+                  to={item.external ? item.path : `/${currentLang}${item.path}`}
+                  className="w-full flex items-center gap-3 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-[var(--color-primary)] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {navIconMap[item.key]}
+                  <span className="text-sm font-medium">{item.label}</span>
+                </Link>
+              ) : (
+                <button
+                  key={item.key}
+                  onClick={() => { scrollToSection(item.id); setIsMenuOpen(false); }}
+                  className="w-full flex items-center gap-3 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-[var(--color-primary)] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                >
+                  {navIconMap[item.key]}
+                  <span className="text-sm font-medium">{item.label}</span>
+                </button>
+              )
             ))}
+            <div className="border-t border-gray-200 dark:border-gray-700 pt-3">
+              <div className="px-4 py-2 text-sm font-medium text-gray-500 dark:text-gray-400">{t('nav.others')}</div>
+              {othersLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  to={link.path}
+                  className="w-full flex items-center gap-3 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-[var(--color-primary)] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <FiExternalLink className="w-4 h-4" />
+                  <span className="text-sm font-medium">{link.label}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </div>

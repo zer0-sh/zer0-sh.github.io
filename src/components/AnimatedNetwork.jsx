@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export const AnimatedNetwork = () => {
+export const AnimatedNetwork = ({ primaryColor = '255, 59, 59', secondaryColor = '106, 27, 154' }) => {
   const canvasRef = useRef(null);
   const nodesRef = useRef([]);
   const animationRef = useRef(null);
@@ -72,9 +72,9 @@ export const AnimatedNetwork = () => {
           node.radius * 3
         );
 
-        gradient.addColorStop(0, `rgba(255, 59, 59, ${node.glow * 0.8})`);
-        gradient.addColorStop(0.5, `rgba(106, 27, 154, ${node.glow * 0.4})`);
-        gradient.addColorStop(1, 'rgba(106, 27, 154, 0)');
+        gradient.addColorStop(0, `rgba(${primaryColor}, ${node.glow * 0.8})`);
+        gradient.addColorStop(0.5, `rgba(${secondaryColor}, ${node.glow * 0.4})`);
+        gradient.addColorStop(1, `rgba(${secondaryColor}, 0)`);
 
         ctx.fillStyle = gradient;
         ctx.fillRect(
@@ -109,8 +109,8 @@ export const AnimatedNetwork = () => {
               nodes[j].y
             );
 
-            gradient.addColorStop(0, `rgba(255, 59, 59, ${lineOpacity})`);
-            gradient.addColorStop(1, `rgba(106, 27, 154, ${lineOpacity})`);
+            gradient.addColorStop(0, `rgba(${primaryColor}, ${lineOpacity})`);
+            gradient.addColorStop(1, `rgba(${secondaryColor}, ${lineOpacity})`);
 
             ctx.strokeStyle = gradient;
             ctx.lineWidth = 1;
@@ -136,7 +136,7 @@ export const AnimatedNetwork = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
+      className="fixed inset-0 pointer-events-none"
       style={{ opacity: 0.6 }}
     />
   );

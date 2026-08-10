@@ -90,6 +90,65 @@ El tema se guarda en `localStorage`.
 
 ------------------------------------------------------------------------
 
+---
+
+## 📝 Blog
+
+El blog usa archivos Markdown planos en `public/blog-posts/`.  
+Se renderizan con `react-markdown` + `remark-gfm`.
+
+### Crear un post nuevo
+
+```bash
+npm run new-post
+```
+
+Sigue las instrucciones interactivas (slug, título, categoría, extracto, imagen de portada).
+
+### Estructura de un post
+
+```markdown
+---
+title: "Título del post"
+date: "2026-05-08"
+category: "DevOps"
+excerpt: "Breve descripción para la lista"
+coverImage: "/blog-posts/images/portada.jpg"   # opcional
+coverAlt: "Descripción de la portada"            # opcional
+---
+
+Contenido del post en Markdown.
+```
+
+### Imágenes
+
+- **Portada**: se define en el frontmatter (`coverImage`) y se muestra al entrar al post.
+- **Inline**: se renderizan con caption si tienen `title`, loading lazy y bordes redondeados.
+
+```
+![Descripción](/blog-posts/images/ejemplo.jpg)
+```
+
+```
+![Descripción](/blog-posts/images/ejemplo.jpg "Texto del caption")
+```
+
+### Generar el índice
+
+El `index.json` se genera automáticamente antes del build:
+
+```bash
+npm run generate-index
+# o simplemente:
+npm run build
+```
+
+### Documentación completa
+
+Ver [`docs/blog.md`](./docs/blog.md).
+
+---
+
 ## 🧪 Problemas conocidos
 
 -   Algunas vulnerabilidades provienen de dependencias internas
