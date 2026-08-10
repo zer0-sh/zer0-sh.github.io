@@ -131,7 +131,7 @@ export const AnimatedNetwork = ({ primaryColor = '255, 59, 59', secondaryColor =
       window.removeEventListener('resize', updateSize);
       cancelAnimationFrame(animationRef.current);
     };
-  }, []);
+  }, [primaryColor, secondaryColor]);
 
   return (
     <canvas
