@@ -149,6 +149,14 @@ Ver [`docs/blog.md`](./docs/blog.md).
 
 ---
 
+## 📸 Capturas
+
+Vista principal del home (`/en`):
+
+![Home](/docs/screenshots/home.png)
+
+---
+
 ## 🧪 Problemas conocidos
 
 -   Algunas vulnerabilidades provienen de dependencias internas
