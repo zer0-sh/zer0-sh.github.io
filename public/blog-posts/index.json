@@ -1,6 +1,15 @@
 {
   "posts": [
     {
+      "slug": "shell-builtins",
+      "title": "Top 15 de shell builtins clásicos de Linux",
+      "date": "2026-08-10",
+      "category": "Linux",
+      "excerpt": "Los shell builtins son comandos integrados en el propio shell. Los 15 clásicos ordenados por frecuencia de uso y presencia en Bash/Unix.",
+      "coverImage": "/blog-posts/images/shell-builtins.png",
+      "coverAlt": "Shell builtins clásicos de Linux en una terminal"
+    },
+    {
       "slug": "cve-2026-9860",
       "title": "Qué es una CVE y por qué importa revisarlas",
       "date": "2026-08-09",
